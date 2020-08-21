@@ -1,0 +1,24 @@
+git：查看是否安装Git，如有显示出语法帮助
+
+git config --global user.name "你的名称" 
+git config --global user.emal "你的邮箱"：给仓库指定用户和邮箱
+
+mkdir 目录名：在当前目录创建一个目录
+
+pwd：显示当前目录
+
+git init：把目录编程Git可以管理的仓库
+
+git add 文件名.后缀名：将文件添加到仓库，可以反复使用
+
+git commit -m "提交说明"：将文件提交到仓库
+
+git log：查看历史记录，加上--pretty=oneline参数可以精简信息
+
+git reset --hard HEAD^：回退到上个版本，上上个版本HEAD^^,上n个版本HEAD~name
+
+git reset --hard 提交编号：撤销回退版本到最新版本
+
+git reflog：用于记录每一次的命令
+
+git status：查看状态
