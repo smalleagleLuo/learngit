@@ -22,3 +22,5 @@ git reset --hard 提交编号：撤销回退版本到最新版本
 git reflog：用于记录每一次的命令
 
 git status：查看状态
+
+git diff HEAD -- 文件名：查看工作区和版本库里面最新版本的区别
