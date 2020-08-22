@@ -53,3 +53,6 @@ git remote add origin git@github.com:smalleagleLuo/learngit.git
 git push -u origin master
 	将本地库中所有内容推送至github仓库上，第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令
 
+$ ssh-keygen -t rsa -C 438976546@qq.com
+	创建本地SSH key
+
