@@ -12,7 +12,7 @@ pwd
 	显示当前目录
 
 git init
-	把目录编程Git可以管理的仓库
+	把目录变成Git可以管理的仓库
 
 git add file.name
 	将文件添加到仓库，可以反复使用
