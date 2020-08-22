@@ -1,32 +1,55 @@
-git：查看是否安装Git，如有显示出语法帮助
+git
+	查看是否安装Git，如有显示出语法帮助
 
 git config --global user.name "你的名称" 
-git config --global user.emal "你的邮箱"：给仓库指定用户和邮箱
+git config --global user.emal "你的邮箱"
+	给仓库指定用户和邮箱
 
-mkdir 目录名：在当前目录创建一个目录
+mkdir 目录名
+	在当前目录创建一个目录
 
-pwd：显示当前目录
+pwd
+	显示当前目录
 
-git init：把目录编程Git可以管理的仓库
+git init
+	把目录编程Git可以管理的仓库
 
-git add 文件名.后缀名：将文件添加到仓库，可以反复使用
+git add file.name
+	将文件添加到仓库，可以反复使用
 
-git commit -m "提交说明"：将文件提交到仓库
+git commit -m "提交说明"
+	将文件提交到仓库
 
-git log：查看历史记录，加上--pretty=oneline参数可以精简信息
+git log
+	查看历史记录，加上--pretty=oneline参数可以精简信息
 
-git reset --hard HEAD^：回退到上个版本，上上个版本HEAD^^,上n个版本HEAD~name
+git reset --hard HEAD^
+	回退到上个版本，上上个版本HEAD^^,上n个版本HEAD~name
 
-git reset --hard 提交编号：撤销回退版本到最新版本
+git reset --hard 提交编号
+	撤销回退版本到最新版本
 
-git reflog：用于记录每一次的命令
+git reflog
+	用于记录每一次的命令
 
-git status：查看状态
+git status
+	查看状态
 
-git diff HEAD -- 文件名：查看工作区和版本库里面最新版本的区别
+git diff HEAD -- 文件名
+	查看工作区和版本库里面最新版本的区别
 
-git restore 文件名.后缀名：丢弃工作区的修改
+git restore file.name
+	丢弃工作区的修改
 
-git restore --staged 文件名.后缀名：撤销暂存区的版本。（结合上面一条可以回退到修改之前的版本）
+git restore --staged file.name
+	撤销暂存区的版本（结合上面一条可以回退到修改之前的版本）
 
-git rm  文件名.后缀名：删除文件。记得commit提交
+git rm  file.name
+	删除文件，记得commit提交
+
+git remote add origin https://github.com/smalleagleLuo/learngit.git
+	本地库关联github仓库
+
+git push -u origin master
+	将本地库中所有内容推送至github仓库上，第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令
+
