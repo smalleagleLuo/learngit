@@ -24,3 +24,5 @@ git reflog：用于记录每一次的命令
 git status：查看状态
 
 git diff HEAD -- 文件名：查看工作区和版本库里面最新版本的区别
+
+git checkout -- 文件名.后缀名：让这个文件回到最近一次git commit或git add时的状态
