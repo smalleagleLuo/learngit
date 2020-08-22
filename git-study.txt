@@ -56,3 +56,5 @@ git push -u origin master
 $ ssh-keygen -t rsa -C 438976546@qq.com
 	创建本地SSH key
 
+git clone git@github.com:smalleagleLuo/TIPTOP.git
+	克隆远程仓库到本地
