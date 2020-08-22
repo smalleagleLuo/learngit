@@ -47,7 +47,7 @@ git restore --staged file.name
 git rm  file.name
 	删除文件，记得commit提交
 
-git remote add origin https://github.com/smalleagleLuo/learngit.git
+git remote add origin git@github.com:smalleagleLuo/learngit.git
 	本地库关联github仓库
 
 git push -u origin master
