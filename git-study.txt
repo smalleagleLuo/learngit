@@ -25,4 +25,6 @@ git status：查看状态
 
 git diff HEAD -- 文件名：查看工作区和版本库里面最新版本的区别
 
-git restore -- 文件名.后缀名：让这个文件回到最近一次git commit或git add时的状态
+git restore 文件名.后缀名：丢弃工作区的修改
+
+git restore --staged 文件名.后缀名：撤销暂存区的版本。（结合上面一条可以回退到修改之前的版本）
