@@ -1,2 +1,7 @@
-Git is a distributed version control system.
-Git is free software distributed under the GPL.
+1.学习如何使用git
+
+2.学习html记录
+
+3.学习css记录
+
+4.学习js记录
