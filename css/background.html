@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>编写简单的css代码</title>
+</head>
+<body>
+   <style>
+       p.gray{background:gray;}
+       h1{background:transparent;}
+       h2{background:rgb(250,0,250);}
+       h3{background:#00ff00;}
+   </style>
+
+   <p class="gray">灰色</p>
+   <h1>透明背景，默认即透明背景</h1>
+   <h2>紫色</h2>
+   <h3>绿色背景</h3>
+
+   <style>
+       div#test{background:url(/images/background.jpg);width:200px;height:100px;}
+   </style>
+
+   <div id="test">
+       这是一个由背景图的div
+   </div>
+
+   <style>
+       .norepeat{background:url(/images/background_small.jpg) no-repeat;width:200px;height:100px;}
+       .repeat{background:url(/images/background_small.jpg) repeat-x;width:200px;height:100px;}
+       .contain{background:url(/images/background_small.jpg);background-size:contain;width:200px;height:100px;}
+   </style>
+   <div class="norepeat">
+       这是不重复的背景图
+   </div>
+   <div class="repeat">
+       这是x重复的背景图
+   </div>
+   <div class="contain">
+       背景平铺
+   </div>
+</body>
+</html>
