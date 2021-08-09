@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +22,7 @@
 	</style>
 </head>
 <body>
-<p>通过点击下面方块，让四个方块数值都相同的同时<br>还要确保绿色边框朝向同一个方向。想想办法吧^_^<br><span>如果你运气足够好，它甚至生成出来就已经是解开的样子</span><br><span style="color: #9e9e9e;font-size: 15px;">这个游戏的原型是《<a rel="nofollow" href="https://ys.mihoyo.com/">原神</a>》盗妻地图中的雷方块机关，觉得挺有意思的，就用js来重现了一下</span>
+<p>通过点击下面方块，让四个方块数值都相同的同时<br>还要确保绿色边框朝向同一个方向。想想办法吧^_^<br><span>如果你运气足够好，它可能生成出来就自动解开了。通过不断刷新，看看你是不是狗托</span><br><span style="color: #9e9e9e;font-size: 15px;">这个游戏的原型是《<a rel="nofollow" href="https://ys.mihoyo.com/">原神</a>》盗妻地图中的雷方块机关，觉得挺有意思的，就用js来重现了一下</span>
 </p>
 <div>
 	<div class="div"><button id="one"></button></div>
@@ -38,7 +37,7 @@
 	<br>
 	<p id="hide" class="hide">小伙子不错哦，有点东西！</p>
 	<br>
-	<a href="https://blog.luojiasan.com/">返回放牛娃|个人技术小站</a>
+	<a href="https://blog.luojiasan.com/">返回放牛娃|个人技术小站</a> | <a href="https://github.com/smalleagleLuo/learngit/blob/master/js%E5%B0%8F%E6%B8%B8%E6%88%8F.html">github源码</a>
 </div>
 <script>
 var one = document.getElementById("one");
@@ -58,7 +57,7 @@ function get_default(){
 	get_rand(thr);
 	get_rand(fou);
 	get_s();
-	if(s_t == true){alert("你就是传说中的狗托吧！");}
+	if(s_t == true){alert("超过了1000分之1的概率。你就是传说中的狗托吧！");}
 }
 get_default();
 /*获取随机数*/
