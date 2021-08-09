@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>js智益游戏</title>
+	<style>
+		*{margin:auto;text-align:center;}
+		p{padding-top:50px;color:green;font-size:35px;width:100%;}
+		div{width:400px;}
+		.div{width: 200px;height: 200px;float: left;}
+		button{width:100px;height:100px;font-size:90px;margin:50px;line-height:0;border:none;}
+		button:hover,#vip:hover{background:#989898;}
+		.up{border-top:10px solid #136961;}
+		.r{border-right:10px solid #136961;}
+		.l{border-left:10px solid #136961;}
+		.down{border-bottom:10px solid #136961;}
+		#again{width:240px;border:none;font-size:50px;margin-top:0px;}
+		#hide,#vip,span{color:red;font-size:20px;}
+		#vip{border:1px solid black;}
+		#hide{padding-top:20px;font-size:30px;}
+		.hide{display:none;}
+	</style>
+</head>
+<body>
+<p>通过点击下面方块，让四个方块数值都相同的同时<br>还要确保绿色边框朝向同一个方向。想想办法吧^_^<br><span>如果你运气足够好，它甚至生成出来就已经是解开的样子</span><br><span style="color: #9e9e9e;font-size: 15px;">这个游戏的原型是《<a rel="nofollow" href="https://ys.mihoyo.com/">原神</a>》盗妻地图中的雷方块机关，觉得挺有意思的，就用js来重现了一下</span>
+</p>
+<div>
+	<div class="div"><button id="one"></button></div>
+	<div class="div"><button id="two"></button></div>
+	<p></p>
+	<div class="div"><button id="thr"></button></div>
+	<div class="div"><button id="fou"></button></div>
+	<p></p>
+	<button id="again">再来一次</button>
+	<br>
+	<span id="vip">爷不会!</span>
+	<br>
+	<p id="hide" class="hide">小伙子不错哦，有点东西！</p>
+	<br>
+	<a href="https://blog.luojiasan.com/">返回放牛娃|个人技术小站</a>
+</div>
+<script>
+var one = document.getElementById("one");
+var two = document.getElementById("two");
+var thr = document.getElementById("thr");
+var fou = document.getElementById("fou");
+var again = document.getElementById("again");
+var vip = document.getElementById("vip");
+var s_t= false;
+var vip_s = false;
+/*初始化*/
+function get_default(){
+	s_t= false;
+	vip_s = false;
+	get_rand(one);
+	get_rand(two);
+	get_rand(thr);
+	get_rand(fou);
+	get_s();
+	if(s_t == true){alert("你就是传说中的狗托吧！");}
+}
+get_default();
+/*获取随机数*/
+function get_rand(el){
+	var rand = Math.floor(Math.random() * 3 + 1);
+	var rand1 = Math.floor(Math.random() * 4 + 1);
+	el.value = rand;
+	el.innerHTML = rand;
+	el.name = rand1;
+	get_sf(el);
+}
+/*转化数字*/
+function p(num){return parseInt(num);}
+/*判断方向状态*/
+function get_sf(el){
+	switch(p(el.name)){
+		case 1:
+			el.className = "";el.classList.add("down");break;
+		case 2:
+			el.className = "";el.classList.add("l");break;
+		case 3:
+			el.className = "";el.classList.add("up");break;
+		default:
+			el.className = "";el.classList.add("r");
+	}
+}
+/*判断数字状态*/
+function get_s(){
+	if(one.value == two.value && one.value == thr.value && one.value == fou.value && one.name == two.name && one.name == thr.name && one.name == fou.name){
+		var s = document.getElementsByTagName("button");
+		for(i=0;i<s.length-1;i++){s[i].disabled = true;}
+		if(vip_s == true){alert("你就是个废物，凸(｀0´)凸");}
+		else{
+		    alert("干的漂亮！");
+		    document.getElementById("hide").classList.remove("hide");
+		}
+		s_t = true;
+	}
+}
+get_s();
+/*重新初始化*/
+again.onclick = function (){
+	var s = document.getElementsByTagName("button");
+	for(i=0;i<s.length-1;i++){s[i].disabled = false;}
+	document.getElementById("hide").classList.add("hide");
+	get_default();
+}
+/*点击自增*/
+function get_z(el){
+	el.value = p(el.value) + 1;
+	if(el.value>3)el.value = 1;
+	el.innerHTML = el.value;
+	if(p(el.name) == 4){el.name = 0;}
+	el.name = p(el.name) + 1;
+	get_sf(el);
+}
+/*废物通道*/
+function get_vip(el){
+	el.value = one.value;
+	el.innerHTML = one.innerHTML;
+	el.name = one.name;
+	get_sf(el);
+}
+/*点击事件*/
+one.onclick = function(){
+	get_z(one);get_z(two);get_z(thr);get_s();
+}
+two.onclick = function(){
+	get_z(one);get_z(two);get_z(fou);get_s();
+}
+thr.onclick = function(){
+	get_z(one);get_z(thr);get_z(fou);get_s();
+}
+fou.onclick = function(){
+	get_z(two);get_z(thr);get_z(fou);get_s();
+}
+vip.onclick = function(){
+	vip_s = true;get_vip(two);get_vip(thr);get_vip(fou);if(s_t == true){alert("这已经是解出来的样子了");again.onclick();}get_s();
+}
+</script>
+</html>
